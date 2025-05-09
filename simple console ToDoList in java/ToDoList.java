@@ -31,7 +31,7 @@ public class ToDoList { //start the ToDoList class
                 //case 2, insert a new task
                 case 2:
                     //capture the new task with this method
-                    checkResponse = capNewTask(tasks, scanner);
+                    checkResponse = capNewTask(scanner);
 
                     //if the response wasn't null (or "")  
                     if(checkResponse != ""){
@@ -39,18 +39,27 @@ public class ToDoList { //start the ToDoList class
                         tasks.add(checkResponse);
                     }
                     break;
-                case 3:
+                //case 3, delete a task
+                case 3: 
+                    //capture the task with this method
                     checkResponse = capTaskDel(tasks, scanner);
 
+                    //if the response wasn't null (or "")
                     if(checkResponse != ""){
+                        //remove the task
                         tasks.remove(checkResponse);
                     }
                     break;
+                //case 4, exit the program
                 case 4:
+                    //show a message
                     System.out.print("Ok, thanks!");
+                    //again == false (to stop the while loop)
                     again = false;
                     break;
+                //if the user inserted an invalid number
                 default:
+                    //show the error
                     System.out.println("INSERT A VALID NUMBER!\n");
                     break;
             }
@@ -59,10 +68,14 @@ public class ToDoList { //start the ToDoList class
         scanner.close(); //close the scanner
     }
 
+    //method that list the tasks saved, receiving the tasks
     static void listTasks(ArrayList<String> tasks){
+        //if has no task
         if(tasks.size() == 0){
+            //show this message
             System.out.println("\nThere's any task saved");
-        } else {
+        } else { //if has at least one task
+            //show the tasks with a foreach
             System.out.println("\nTasks saved:");
             for (String task : tasks) {
                 System.out.println(task);
@@ -70,13 +83,16 @@ public class ToDoList { //start the ToDoList class
         }
     }
 
-    static String capNewTask(ArrayList<String> tasks, Scanner scanner){
+    //method that capture the new task to insert
+    static String capNewTask(Scanner scanner){
+        //ask the task the user want to insert
         System.out.println("\nInsert the new task (type 'exit' to cancel): ");
         String newTask = scanner.next();
         
         if(newTask == "exit"){
             return "";
         }else {
+            System.out.println("Task inserted!");
             return newTask;
         }
     }
@@ -89,9 +105,17 @@ public class ToDoList { //start the ToDoList class
             System.out.println("\nInsert the task you want to delete (type 'exit' to cancel): ");
             String taskToDel = scanner.next();
             
+            while(!tasks.contains(taskToDel) && taskToDel != "exit"){
+                System.out.println("Insert an existing task!");
+
+                System.out.println("Insert the task you want to delete (type 'exit' to cancel): ");
+                taskToDel = scanner.next();
+            }
+
             if(taskToDel == "exit"){
                 return "";
             }else {
+                System.out.println("Task deleted!");
                 return taskToDel;
             }
         } else {
