@@ -26,7 +26,8 @@ public class ToDoList { //start the ToDoList class
             switch (option) {
                 //case 1, list the tasks
                 case 1:
-                    listTasks(tasks);
+                    System.out.println("\nTasks saved:"); //show this message
+                    listTasks(tasks); //start the method listTasks 
                     break;
                 //case 2, insert a new task
                 case 2:
@@ -76,7 +77,6 @@ public class ToDoList { //start the ToDoList class
             System.out.println("\nThere's any task saved");
         } else { //if has at least one task
             //show the tasks with a foreach
-            System.out.println("\nTasks saved:");
             for (String task : tasks) {
                 System.out.println(task);
             }
@@ -87,40 +87,55 @@ public class ToDoList { //start the ToDoList class
     static String capNewTask(Scanner scanner){
         //ask the task the user want to insert
         System.out.println("\nInsert the new task (type 'exit' to cancel): ");
+        //capture the task 
         String newTask = scanner.next();
         
-        if(newTask == "exit"){
-            return "";
-        }else {
+        if(newTask == "exit"){ //if the input was "exit"
+            return ""; //return null (or "")
+        }else { //if wasn't
+            //show that was inserted
             System.out.println("Task inserted!");
+            //return the newTask
             return newTask;
         }
     }
 
+    //method that capture the task to delete
     static String capTaskDel(ArrayList<String> tasks, Scanner scanner){
+        //if has at least one task saved
         if(tasks.size() > 0){
+            //show the tasks saved with the method listTasks
             System.out.println("\nTasks you can delete: ");
             listTasks(tasks);
 
+            //ask the task that will be removed
             System.out.println("\nInsert the task you want to delete (type 'exit' to cancel): ");
-            String taskToDel = scanner.next();
+            String taskToDel = scanner.next(); //capture the task
             
-            while(!tasks.contains(taskToDel) && taskToDel != "exit"){
+            //if the String inserted doesn't exists and is not "exit"
+            while(!tasks.contains(taskToDel) && taskToDel != "exit"){ //enter in a loop 
+                //show the error
                 System.out.println("Insert an existing task!");
 
+                //as the task to delete
                 System.out.println("Insert the task you want to delete (type 'exit' to cancel): ");
+                //capture the task
                 taskToDel = scanner.next();
             }
 
+            //if the String inserted == "exit"
             if(taskToDel == "exit"){
-                return "";
-            }else {
+                return ""; //return null (or "")
+            }else { //if isn't "exit"
+                //show that was a success
                 System.out.println("Task deleted!");
+                //return the task to delete
                 return taskToDel;
             }
-        } else {
+        } else { //if has no task saved
+            //show this message
             System.out.println("\nThere's any task to delete");
-            return "";
+            return ""; //return null (or "")
         }
     }
 }
