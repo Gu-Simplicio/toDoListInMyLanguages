@@ -1,33 +1,41 @@
 import java.util.ArrayList; // import the lib for lists
 import java.util.Scanner; //import the lib to capture data
 
-public class ToDoList {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        ArrayList<String> tasks = new ArrayList<>();
-        boolean again = true;
-        String checkResponse;
-        int option;
+public class ToDoList { //start the ToDoList class
+    public static void main(String[] args) { //main method of the class
+        Scanner scanner = new Scanner(System.in); //create a new scanner to capture the inputs
+        ArrayList<String> tasks = new ArrayList<>(); //create the list where the tasks will be saved in
+        boolean again = true; //boolean variable that will check if the program will start again
+        String checkResponse; //variable that will check the response of the methods
+        int option; ///variable that represents the option of the user
         
-        while(again){
+        while(again){ //start the program while again == true
+            //show the options
             System.out.println("\nOptions to select:");
 
-            System.out.println("type '1' to list the tasks saved ");
-            System.out.println("type '2' to insert a new task");
-            System.out.println("type '3' to delete a task");
-            System.out.println("type '4' to exit the ToDoList");
+            System.out.println("type '1' to list the tasks saved "); //1 to listTasks
+            System.out.println("type '2' to insert a new task"); //2 to capNewTask
+            System.out.println("type '3' to delete a task"); //3 to capTaskDel 
+            System.out.println("type '4' to exit the ToDoList"); //4 to again == false
 
-            System.out.print("Insert your option: ");
+            //capture the option in a int
+            System.out.print("Insert your option: "); 
             option = scanner.nextInt();
 
+            //switch case that check wich method will be used
             switch (option) {
+                //case 1, list the tasks
                 case 1:
                     listTasks(tasks);
                     break;
+                //case 2, insert a new task
                 case 2:
+                    //capture the new task with this method
                     checkResponse = capNewTask(tasks, scanner);
 
+                    //if the response wasn't null (or "")  
                     if(checkResponse != ""){
+                        //add the task inserted in tasks
                         tasks.add(checkResponse);
                     }
                     break;
@@ -48,7 +56,7 @@ public class ToDoList {
             }
         }
 
-        scanner.close();
+        scanner.close(); //close the scanner
     }
 
     static void listTasks(ArrayList<String> tasks){
