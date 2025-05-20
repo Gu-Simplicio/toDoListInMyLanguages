@@ -1,0 +1,8 @@
+C:\xampp\htdocs\projetos\toDoListInMyLanguages\simple console ToDoList in C#\ToDoList\ToDoList\bin\Debug\ToDoList.exe.config
+C:\xampp\htdocs\projetos\toDoListInMyLanguages\simple console ToDoList in C#\ToDoList\ToDoList\bin\Debug\ToDoList.exe
+C:\xampp\htdocs\projetos\toDoListInMyLanguages\simple console ToDoList in C#\ToDoList\ToDoList\bin\Debug\ToDoList.pdb
+C:\xampp\htdocs\projetos\toDoListInMyLanguages\simple console ToDoList in C#\ToDoList\ToDoList\obj\Debug\ToDoList.csproj.AssemblyReference.cache
+C:\xampp\htdocs\projetos\toDoListInMyLanguages\simple console ToDoList in C#\ToDoList\ToDoList\obj\Debug\ToDoList.csproj.CoreCompileInputs.cache
+C:\xampp\htdocs\projetos\toDoListInMyLanguages\simple console ToDoList in C#\ToDoList\ToDoList\obj\Debug\ToDoList.exe
+C:\xampp\htdocs\projetos\toDoListInMyLanguages\simple console ToDoList in C#\ToDoList\ToDoList\obj\Debug\ToDoList.pdb
+C:\xampp\htdocs\projetos\toDoListInMyLanguages\simple console ToDoList in C#\ToDoList\ToDoList\obj\Debug\ToDoList.exe.config
